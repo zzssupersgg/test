@@ -1,0 +1,38 @@
+基于某远程分支1创建一个自己的远程分支2
+git clone -b 远程分支名1 仓库的URL
+git submodule update --init --recursive
+git pull一下
+git checkout -b 远程分支2 origin/远程分支2
+
+
+git checkout master 切換分支
+git pull
+git submodule update --init --recursive
+git checkout master_zyz
+git rebase master    //"git add/rm <conflicted_files>", then run "git rebase --continue"   
+VS接收合并以后就不需要git add啦
+git push [--force]
+
+
+
+远程操作
+git remote -v  查看关联的远程仓库别名以及URL地址
+git remote show <remote_name> 显示指定远程仓库的详细信息，包括 URL 和跟踪分支
+git remote add <remote_name> <remote_url> 关联一个远程仓库，给远程仓库取一个别名
+
+1.pull与push执行的具体步骤是啥，这两个命令做了什么？
+2.git rebase 与 git merge之间的区别
+3.出现合并冲突，修改文件后是否需要add，ccommit?
+4.远程分支如何合并？为什么要保持版本一致？本地分支合并呢？
+5.rebase 底层原理是什么？做了些什么？ 
+6.如何查看跟踪的分支？
+
+git branch -r  查看远程分支
+git branch -vv 查看本地分支和远程分支对应关系
+git checkout -b gpf origin/gpf    # 新建本地分支gpf与远程gpf分支相关联
+git pull 命令详解 https://blog.csdn.net/BUCTOJ/article/details/89879619
+git push          https://blog.csdn.net/chaogu94/article/details/111057046
+
+git pull/git push仅仅是拉取分支吗？
+拉取远程分支并创建本地分支
+git checkout -b 本地分支名x origin/远程分支名x
